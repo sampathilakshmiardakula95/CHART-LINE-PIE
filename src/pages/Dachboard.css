@@ -1,0 +1,16 @@
+h1{
+    color:rgb(205, 2, 250);
+    font-family: Roboto;
+}
+.chart{
+    display: flex;
+    
+}
+.line{
+    background-color: #ffffff;
+    margin: 10px;
+    box-shadow: inset;
+}
+*{
+    background-color: #f4f6fa;
+}
