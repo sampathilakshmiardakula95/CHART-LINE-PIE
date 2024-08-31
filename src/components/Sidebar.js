@@ -1,42 +1,72 @@
 import React, { useState } from 'react';
-
 import { NavLink } from 'react-router-dom';
 
 
 const Sidebar = ({children}) => {
     const[isOpen ,setIsOpen] = useState(true);
-    const toggle = () => setIsOpen (isOpen);
+   const toggle = () => setIsOpen (isOpen);
     const menuItem=[
         {
             path:"/",
             name:"Dashboard",
            
         },
+       
         {
-            path:"/about",
-            name:"About",
+            path:"/inventory",
+            name:"Inventory",
+            
+        },
+       
+        {
+            path:"/order",
+            name:"Order",
             
         },
         {
-            path:"/analytics",
-            name:"Analytics",
-            
-        },
-        {
-            path:"/comment",
-            name:"Comment",
+            path:"/returns",
+            name:"Returns",
+           
+        }, {
+            path:"/customer",
+            name:"Customer",
 
         },
         {
-            path:"/product",
-            name:"Product",
-            
+            path:"/shipping",
+            name:"Shipping",
+
         },
         {
-            path:"/productList",
-            name:"Product List",
-           
-        }
+            path:"/channel",
+            name:"Channel",
+
+        },
+        {
+            path:"/integrations",
+            name:"Integrations",
+
+        },
+        
+       
+    ]
+
+    const menuItem1 =[
+        {
+            path:"/calculator",
+            name:"Calculator",
+
+        },
+        {
+            path:"/reports",
+            name:"Reports",
+
+        },
+        {
+            path:"/account",
+            name:"Account",
+
+        },
     ]
     return (
         <div className="container">
@@ -51,6 +81,18 @@ const Sidebar = ({children}) => {
                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
                            <div className="icon">{item.icon}</div>
                            <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                       </NavLink>
+                   ))
+               },
+               {
+                   menuItem1.map((item, index)=>(
+                       <NavLink to={item.path} key={index} className="link box"  activeclassName="active">
+                           <div className="icon">{item.icon}</div>
+                           <select>
+                           <option style={{display: isOpen ? "block" : "none", marginLeft:"10px"}} className="link_text">{item.name}
+
+                           </option>
+                           </select>
                        </NavLink>
                    ))
                }

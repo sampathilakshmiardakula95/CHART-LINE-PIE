@@ -1,20 +1,24 @@
 import React from 'react';
 import './Dachboard.css'
-import LineChart from './LineChart.js';
 import PieChart from './PieChart.js'
+import BiaxialLineChart from './LineChart.js';
+import './Dachboard.css'
 
 
-const  Dashboard= () => {
+const Dashboard = () => {
     return (
-        <div className='chart'>
-            <h1>Dashboard</h1>
-            <div className='line'>
-            <LineChart />
-            </div>
-            <PieChart />
-            
+
+        <div className='color-card'>
+            <h1 className='heading'>Dashboard</h1>
+            <div className='div'>
         
+                <BiaxialLineChart />
+                <PieChart />
+                
+            </div>
         </div>
+        
+
     );
 };
 
